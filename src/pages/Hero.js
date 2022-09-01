@@ -12,7 +12,7 @@ function Hero(props) {
     }, []);
 
     const fetchHero = async () => {
-        const hero = await fetch(`http://localhost:5000/heroes/${params.slug}`);
+        const hero = await fetch(`process.env.REACT_APP_API_URL${params.slug}`);
         const response = await hero.json();
         setHero(response);
     };
@@ -24,9 +24,9 @@ function Hero(props) {
         >
             <section
                 style={{ "max-width": "500px" }}
-                className="bg-warning text-center mx-auto mb-5"
+                className="bg-warning text-center mx-auto mb-5 rounded"
             >
-                <img src={image} alt={name} className="w-100" />
+                <img src={image} alt={name} className="w-100 rounded-top" />
                 <h2>{name}</h2>
                 <p>Power : {power?.join(", ")}</p>
                 <p>Color : {color}</p>

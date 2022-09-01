@@ -11,7 +11,7 @@ function Home(props) {
     }, []);
 
     const fetchHeroes = async () => {
-        const heroes = await fetch("http://localhost:5000/heroes/");
+        const heroes = await fetch(process.env.REACT_APP_API_URL);
         const response = await heroes.json();
         console.log(response);
         setHeroes(response);

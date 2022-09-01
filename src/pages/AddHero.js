@@ -55,7 +55,7 @@ function AddHero(props) {
             image: image,
         };
 
-        const request = await fetch("http://localhost:5000/heroes/", {
+        const request = await fetch(process.env.REACT_APP_API_URL, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
