@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 function Hero(props) {
     const params = useParams();
     const [hero, setHero] = useState([]);
-    const { name, power, color, age, isAlive, image } = hero;
+    const { name, power, color, age, image } = hero;
 
     useEffect(() => {
         fetchHero();

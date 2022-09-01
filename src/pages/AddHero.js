@@ -31,8 +31,14 @@ function AddHero(props) {
     };
     const handlePowerChange = (e) => {
         if (e.target.value.length > 1) {
-            const clonedPower = [...power, e.target.value];
-            setPower(clonedPower);
+            const clonedPower = [...power];
+            const powerExisting = clonedPower.find(
+                (pow) => pow === e.target.value
+            );
+            if (!powerExisting) {
+                clonedPower.push(e.target.value);
+                setPower(clonedPower);
+            }
         }
     };
 

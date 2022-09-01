@@ -7,6 +7,7 @@ function Home(props) {
 
     useEffect(() => {
         fetchHeroes();
+        // eslint-disable-next-line
     }, []);
 
     const fetchHeroes = async () => {
