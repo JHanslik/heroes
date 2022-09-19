@@ -12,7 +12,9 @@ function Hero(props) {
     }, []);
 
     const fetchHero = async () => {
-        const hero = await fetch(`process.env.REACT_APP_API_URL${params.slug}`);
+        const hero = await fetch(
+            `${process.env.REACT_APP_API_URL}${params.slug}`
+        );
         const response = await hero.json();
         setHero(response);
     };
